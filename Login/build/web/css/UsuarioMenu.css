@@ -1,0 +1,13 @@
+/* CSS para fuinciones necesarias, el alterarlas podría modificar comportamiento importante
+/* Estilo para el menú del usuario */
+#usuario-menu {
+    position: relative;
+}
+
+/* Las opciones de usuario que aparecen debajo */
+#opciones {
+    position: absolute;
+    /* Distancia entre opcion y menu */
+    top: 100%;
+    left: 0;
+}
