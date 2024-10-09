@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link rel="stylesheet" href="css/estilosLogin.css" type="text/css" media="all">
+        <link rel="stylesheet" href="css/estilosLogin1.css" type="text/css" media="all">
         
         <%
             response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); //Borrar directivas de memoria cache y anular algoritmos predeterminados para almacenar cache 
@@ -19,8 +19,8 @@
         %>
     </head>
     <body>
-        <div class="cuerpoFormulario" id="cuerpoFormulario">
-            <form class="formularioLogin" id="formularioLogin" method="post" action="InicioSesionServlet">
+        <div class="flautasAhogadas" id="cuerpoFormulario">
+            <form class="flautasAhogadas" id="formularioLogin" method="post" action="InicioSesionServlet">
                 <h1>Inicie Sesion</h1>
 
                 <p>Usuario:</p>

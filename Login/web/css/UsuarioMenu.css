@@ -11,3 +11,23 @@
     top: 100%;
     left: 0;
 }
+
+body {
+    background-image: url("https://img.huffingtonpost.es/files/image_1200_720/uploads/2024/03/18/imagen-de-archivo-de-un-bosque-frondoso.jpeg");
+    background-size: 100%;
+}
+
+.papasGratinadas{
+    background-color: white;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between; /* Espacio igual entre los enlaces */
+    list-style-type: none; /* Eliminar viñetas */
+    margin: 0; /* Eliminar margen */
+}
+
+.papasGratinadas a {
+    text-decoration: none; /* Eliminar subrayado */
+    color: black;
+    padding: 10px; /* Es color: pink; paciado interno (opcional) */
+}

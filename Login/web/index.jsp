@@ -13,7 +13,7 @@ and open the template in the editor.
         <link rel="stylesheet" href="css/UsuarioMenu.css" type="text/css" media="all">
     </head>
     <body>
-        <div id="menu-horizontal">
+        <div class="papasGratinadas" id="menu-horizontal">
             <a href="#">Mapa</a> |
             <a href="#">Temas</a> |
             <a href="#">Green Company</a> |

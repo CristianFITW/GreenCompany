@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link rel="stylesheet" href="css/estilosPaginaInicio.css" type="text/css" media="all">
+        <link rel="stylesheet" href="css/estilosPaginaInicio1.css" type="text/css" media="all">
         <%
         response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
         
@@ -20,7 +20,7 @@
         %>
     </head>
     <body>
-        <div class="contenidoInicio">
+        <div class="sopaCalabaza">
             <h1>Hola <%=request.getSession().getAttribute("nombre")%>,¡Bienvenido! </h1>
 
             <p><a href="https://www.google.com">IR A GOOGLE</a></p>
