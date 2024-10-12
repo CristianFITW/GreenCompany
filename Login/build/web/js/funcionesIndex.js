@@ -18,3 +18,7 @@ function cargarAltaUsuario(){
 function cargarLogin(){
     cargarElementoDinamicamente("login.jsp", document.getElementById("contenidoDinamico"));
 }
+
+function cargarMenu(){
+    cargarElementoDinamicamente("Menu.jsp", document.getElementById("contenidoDinamicoMenu"));
+}

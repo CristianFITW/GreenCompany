@@ -13,3 +13,7 @@
     function cargarAltaUsuario() {
         // Acción para cargar el registro de usuarios
     }
+    
+    function cargarMenu() {
+        
+    }
