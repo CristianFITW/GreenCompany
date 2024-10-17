@@ -125,17 +125,8 @@ figcaption::before
 }
 
 #welcomeMessage
-figcaption::after {
-  background: var(--gradient);
-  width: calc(100% + 3.1em);
-  height: calc(100% + 3.1em);
-  z-index: -2;
-}
-
-#welcomeMessage
 figcaption
 h1 {
-  text-transform: lowercase;
   background: #555;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 0.625em 1.25em, rgba(0, 0, 0, 0.23) 0px 0.375em 0.375em;
   transition: all 0.1s ease-in-out;
