@@ -1,15 +1,373 @@
-<!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
-</html>
+<html lang="en" class="hydrated"><head>
+  <meta charset="UTF-8"><style data-styles="">ion-icon{visibility:hidden}.hydrated{visibility:inherit}</style>
+  
+
+    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png">
+
+    <meta name="apple-mobile-web-app-title" content="CodePen">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico">
+
+    <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111">
+
+
+
+  
+    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
+
+
+  <title>CodePen - Animated Slider | Swiper JS &amp; Particles JS</title>
+
+    <link rel="canonical" href="https://codepen.io/ecemgo/pen/jOoNePb">
+  
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  
+<style>
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  background: #111113;
+  background-image: radial-gradient(
+    circle at top left,
+    #950923 10%,
+    #111113 30%
+  );
+
+}
+
+.particles {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.container {
+  width: 80%;
+}
+
+.swiper {
+  width: 100%;
+  padding: 50px 0;
+}
+
+.swiper-slide {
+  position: relative;
+  width: 200px;
+  height: 500px;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: 1s;
+  user-select: none;
+}
+
+.swiper-slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(130, 13, 13, 0.8),
+    rgba(39, 8, 92, 0.8)
+  );
+  mix-blend-mode: multiply;
+  z-index: 1;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 1s;
+}
+
+.swiper-slide p {
+  position: absolute;
+  left: 20px;
+  bottom: 10px;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: 2px;
+  z-index: 2;
+  opacity: 0;
+  transform: rotate(360deg) scale(0);
+  transition: 0.8s;
+}
+
+.swiper-slide-active {
+  position: relative;
+  width: 350px;
+  transition: 1s;
+}
+
+.swiper-slide-active::after {
+  background: rgba(123, 123, 123, 0.4);
+}
+
+.swiper-slide-active img {
+  transform: scale(1.3);
+  object-position: 50% 0%;
+}
+
+.swiper-slide-active p {
+  transform: rotate(0deg) scale(1);
+  opacity: 1;
+}
+
+.swiper-pagination-bullet {
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: all 0.6s ease-in-out;
+}
+
+.swiper-pagination-bullet-active {
+  width: 32px;
+  background-color: #6f1223;
+  border-radius: 14px;
+}
+
+.audio-icon {
+  font-size: 2rem;
+  color: #fff;
+}
+
+
+
+#play-pause-button:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+#play-pause-button:active {
+  transform: scale(0.95);
+}
+
+.hidden {
+  display: none;
+}
+
+.logo {
+  position: fixed;
+  right: -20px;
+  bottom: -35px;
+  z-index: 10;
+}
+
+.logo img {
+  width: 120px;
+}
+
+@media (max-width: 890px) {
+  .logo {
+  right: -10px;
+  bottom: -20px;
+}
+  
+ .logo img {
+  width: 80px;
+  }
+}
+
+#play-pause-button{
+    display: none;
+}
+        p {
+            font-size: 48px; /* Tamaño grande */
+            color: white; /* Color blanco */
+            font-family: 'Comic Sans MS', cursive, sans-serif; /* Fuente cómica */
+            text-align: center; /* Centrar texto, opcional */
+        }
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+</head>
+
+<body translate="no" class="">
+  
+    <audio id="background-music" loop="">
+      <source src="https://github.com/ecemgo/mini-samples-great-tricks/raw/main/song-list/stranger-things-luxide-remix-no-copyright-music.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <button id="play-pause-button">
+      <ion-icon class="audio-icon md hydrated hidden" id="pause-music" name="pause" role="img"></ion-icon>
+    </button>
+    <p>Conocenos</p>
+    <div id="particles-js" class="particles"><canvas class="particles-js-canvas-el" width="1820" height="808" style="width: 100%; height: 100%;"></canvas></div>
+
+    <div class="container">
+      <div class="swiper swiper-initialized swiper-horizontal swiper-backface-hidden">
+        <div class="swiper-wrapper" id="swiper-wrapper-c310b6b68dc28f10e9" aria-live="polite" style="cursor: grab; transition-duration: 0ms; transform: translate3d(328px, 0px, 0px); transition-delay: 0ms;">
+          <div class="swiper-slide swiper-slide-prev" role="group" aria-label="1 / 9" style="margin-right: 10px;">
+            <img src="https://boom-site-wp.s3.us-east-2.amazonaws.com/wp-content/uploads/2024/07/07232311/Noel-Gallagher_07_24.jpg">
+            <p>Cristian Gutiérrez Flores</p>
+          </div>
+          <div class="swiper-slide swiper-slide-active" role="group" aria-label="2 / 9" style="margin-right: 10px;">
+            <img src="https://lh3.googleusercontent.com/drive-storage/AJQWtBNk6iZf86l3QbWzdP-ctzifMqJa1YxP0DXn7hDF0Q2Z5_fP0uOQM4Tev-zVFCazI-uezVt7QM6SlCjVt69mdBPhRDOMJL1PEgujBilhWTe2LBQ=w1903-h953">
+            <p>Francisco David Rojo Martínez</p>
+          </div>
+          <div class="swiper-slide swiper-slide-next" role="group" aria-label="3 / 9" style="margin-right: 10px;">
+            <img src="https://lh3.googleusercontent.com/drive-storage/AJQWtBOq0dd-1jzjg_4Edz4nfJrBIJnzphEvjcFRZ8BcKBtWIetreSSEBHiXZPNVnT_g7OHlc_zwLKNr_OiqRhc0_f4oO4hYyoVsYlfM2CX0spPsVBQ=w1903-h953">
+            <p>Mily Fernanda Morales Muñoz</p>
+          </div>
+          <div class="swiper-slide" role="group" aria-label="4 / 9" style="margin-right: 10px;">
+            <img src="https://lh3.googleusercontent.com/drive-storage/AJQWtBMDasCtaHevrvelvhBYdROnhPo1a-klMKh9aYk6F8Nh-wIZ4kLlniAFisuETs-ezJ7azg8H4qhZaDKGgydXKrrKDI7x3nBQnz4yOlMDdXkJ-ek=w1903-h953">
+            <p>Luis Enrique Flores Gallardo</p>
+          </div>
+          <div class="swiper-slide" role="group" aria-label="5 / 9" style="margin-right: 10px;">
+            <img src="https://lh3.googleusercontent.com/drive-storage/AJQWtBNI6DnoumzUY1qinAU4_pT2qnUXLXM1AP-Alh04JQNFnFXanx5EhECkn1F25hzFTOs6nCVx9jGoUNYhDbuDDOHYWkjXZvYDzXJ2k39t8Loaork=w1903-h953">
+            <p>Juan Pablo Sánchez Nuñez</p>
+          </div>
+          <div class="swiper-slide" role="group" aria-label="6 / 9" style="margin-right: 10px;">
+            <img src="https://lh3.googleusercontent.com/drive-storage/AJQWtBPfXX7ltmP9Kb-QGWutvD_q0rehGPMNFbTp1iqo-cjVQH7PU0KKulp6rNYFcklXRmOLJ182fYQ3xOxFslbAdKvRjFgxBiYd7mqRnOA2sFdoLxs=w1903-h953">
+            <p>Rodrigo Yael Gonzalez Nava</p>
+          </div>
+        </div>
+        <div class="swiper-pagination swiper-pagination-bullets swiper-pagination-horizontal"><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active" aria-current="true"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span><span class="swiper-pagination-bullet"></span></div>
+      <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+    </div>
+   
+  
+  <script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      <script id="rendered-js">
+const audio = document.getElementById("background-music");
+const playPauseButton = document.getElementById("play-pause-button");
+const playIcon = document.getElementById("play-music");
+const pauseIcon = document.getElementById("pause-music");
+
+let isPlaying = false;
+
+function togglePlayPause() {
+  console.log("Toggle function called");
+  if (isPlaying) {
+    audio.pause();
+    playIcon.classList.remove("hidden");
+    pauseIcon.classList.add("hidden");
+  } else {
+    audio.play();
+    playIcon.classList.add("hidden");
+    pauseIcon.classList.remove("hidden");
+  }
+  isPlaying = !isPlaying;
+}
+
+playPauseButton.addEventListener("click", togglePlayPause);
+
+audio.addEventListener("ended", function () {
+  audio.currentTime = 0;
+  audio.play();
+});
+
+var swiper = new Swiper(".swiper", {
+  grabCursor: true,
+  initialSlide: 0,
+  centeredSlides: true,
+  slidesPerView: "auto",
+  spaceBetween: 10,
+  speed: 1000,
+  freeMode: false,
+  mousewheel: {
+    thresholdDelta: 30 },
+
+  pagination: {
+    el: ".swiper-pagination" },
+
+  on: {
+    click(event) {
+      swiper.slideTo(this.clickedIndex);
+    } } });
+
+
+
+particlesJS("particles-js", {
+  particles: {
+    number: {
+      value: 180,
+      density: {
+        enable: true,
+        value_area: 800 } },
+
+
+    color: {
+      value: "#fff" },
+
+    shape: {
+      type: "circle" },
+
+    opacity: {
+      value: 0.3,
+      random: false,
+      anim: {
+        enable: false,
+        speed: 4,
+        opacity_min: 0.1,
+        sync: false } },
+
+
+    size: {
+      value: 4,
+      random: true,
+      anim: {
+        enable: true,
+        speed: 2,
+        size_min: 0.1,
+        sync: false } },
+
+
+    line_linked: {
+      enable: false },
+
+    move: {
+      enable: true,
+      speed: 0.4,
+      direction: "right",
+      random: true,
+      straight: false,
+      out_mode: "none",
+      bounce: false,
+      attract: {
+        enable: false,
+        rotateX: 600,
+        rotateY: 1200 } } },
+
+
+
+  retina_detect: true });
+//# sourceURL=pen.js
+    </script>
+
+  
+
+
+
+</body></html>
