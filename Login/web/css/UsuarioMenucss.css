@@ -75,7 +75,7 @@ body {
   height: 200px;
   overflow: hidden;
   margin: 0;
-  font-size: 100%;
+  font-size: 75%;
   color: white;
   backface-visibility: hidden;
 }
@@ -320,6 +320,40 @@ svg {
   transition: all 70ms linear;
 }
 
+
+#welcomeMessage
+figcaption
+h1
+b
+svg {
+  position: relative;
+  width: 55%;
+  height: auto;
+  fill: url(#svgGradient);
+  filter: grayscale(100%) brightness(1.2);
+  transform: rotateY(-180deg);
+  transition: all 200ms linear;
+}
+
+#welcomeMessage
+figcaption
+h1
+b:hover
+svg {
+  filter: grayscale(0%) brightness(1);
+  transition: all 200ms ease-in-out;
+}
+
+#welcomeMessage
+figcaption
+h1
+b:focus
+svg {
+  filter: grayscale(0%) brightness(1);
+  transform: rotateY(-180deg) scale(0.9);
+  transition: all 70ms linear;
+}
+
 #toggleOpen:checked
   ~ #welcomeMessage {
       font-size: 100%;    
@@ -550,13 +584,13 @@ svg {
   0% {
     margin: 0 0;
     transform: rotateY(0deg);
-    width: 2em;
-    height: 2em;
+    width: 2.1em;
+    height: 2.1em;
   }
-  20% {
+  2.10% {
     transform: rotateY(0deg);
-    width: 2em;
-    height: 2em;
+    width: 2.1em;
+    height: 2.1em;
   }
   80% {
     transform: rotateY(180deg);
@@ -578,21 +612,21 @@ svg {
     width: 3em;
     height: 3em;
   }
-  20% {
+  2.10% {
     transform: rotateY(180deg);
     width: 3em;
     height: 3em;
   }
   80% {
     transform: rotateY(0deg);
-    width: 2em;
-    height: 2em;
+    width: 2.1em;
+    height: 2.1em;
   }
   100% {
     margin: 0 0;
     transform: rotateY(0deg);
-    width: 2em;
-    height: 2em;
+    width: 2.1em;
+    height: 2.1em;
   }
 }
 
@@ -603,21 +637,21 @@ svg {
     width: 3em;
     height: 3em;
   }
-  20% {
+  2.10% {
     transform: rotateY(180deg);
     width: 3em;
     height: 3em;
   }
   80% {
     transform: rotateY(0deg);
-    width: 2em;
-    height: 2em;
+    width: 2.1em;
+    height: 2.1em;
   }
   100% {
     margin: 0 0;
     transform: rotateY(0deg);
-    width: 2em;
-    height: 2em;
+    width: 2.1em;
+    height: 2.1em;
   }
 }
 
@@ -628,21 +662,21 @@ svg {
     width: 3em;
     height: 3em;
   }
-  20% {
+  2.10% {
     transform: rotateY(180deg);
     width: 3em;
     height: 3em;
   }
   80% {
     transform: rotateY(0deg);
-    width: 2em;
-    height: 2em;
+    width: 2.1em;
+    height: 2.1em;
   }
   100% {
     margin: 0 0;
     transform: rotateY(0deg);
-    width: 2em;
-    height: 2em;
+    width: 2.1em;
+    height: 2.1em;
   }
 }
 

@@ -1,9 +1,3 @@
-<%-- 
-    Document   : altaUsuario
-    Created on : 17/08/2020, 09:16:34 PM
-    Author     : Emmanuel
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

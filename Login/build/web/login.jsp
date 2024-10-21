@@ -1,9 +1,3 @@
-<%-- 
-    Document   : login.jsp
-    Created on : 17/08/2020, 09:17:04 PM
-    Author     : Emmanuel
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

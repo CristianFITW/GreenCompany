@@ -28,24 +28,24 @@ audio.addEventListener("ended", function () {
 
 var swiper = new Swiper(".swiper", {
   grabCursor: true,
-  initialSlide: 4,
+  initialSlide: 0,
   centeredSlides: true,
   slidesPerView: "auto",
   spaceBetween: 10,
   speed: 1000,
   freeMode: false,
   mousewheel: {
-    thresholdDelta: 30,
-  },
+    thresholdDelta: 30 },
+
   pagination: {
-    el: ".swiper-pagination",
-  },
+    el: ".swiper-pagination" },
+
   on: {
     click(event) {
       swiper.slideTo(this.clickedIndex);
-    },
-  },
-});
+    } } });
+
+
 
 particlesJS("particles-js", {
   particles: {
@@ -53,15 +53,15 @@ particlesJS("particles-js", {
       value: 180,
       density: {
         enable: true,
-        value_area: 800,
-      },
-    },
+        value_area: 800 } },
+
+
     color: {
-      value: "#fff",
-    },
+      value: "#fff" },
+
     shape: {
-      type: "circle",
-    },
+      type: "circle" },
+
     opacity: {
       value: 0.3,
       random: false,
@@ -69,9 +69,9 @@ particlesJS("particles-js", {
         enable: false,
         speed: 4,
         opacity_min: 0.1,
-        sync: false,
-      },
-    },
+        sync: false } },
+
+
     size: {
       value: 4,
       random: true,
@@ -79,12 +79,12 @@ particlesJS("particles-js", {
         enable: true,
         speed: 2,
         size_min: 0.1,
-        sync: false,
-      },
-    },
+        sync: false } },
+
+
     line_linked: {
-      enable: false,
-    },
+      enable: false },
+
     move: {
       enable: true,
       speed: 0.4,
@@ -96,11 +96,9 @@ particlesJS("particles-js", {
       attract: {
         enable: false,
         rotateX: 600,
-        rotateY: 1200,
-      },
-    },
-  },
-  retina_detect: true,
-});
+        rotateY: 1200 } } },
 
 
+
+  retina_detect: true });
+//# sourceURL=pen.js

@@ -1,9 +1,3 @@
-<%-- 
-    Document   : paginaInicio
-    Created on : 5/10/2020, 01:57:02 AM
-    Author     : Emmanuel
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
