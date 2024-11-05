@@ -68,7 +68,7 @@
         </a>
       </b>
       <b>
-        <a href="javascript:void(0);" title="Usuario">
+          <a href="javascript:void(0);" id="menuUsuario" title="Usuario" onclick="cargarMenuUsuario()">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
             <path d="M16,29A13,13,0,1,1,29,16,13,13,0,0,1,16,29ZM16,5A11,11,0,1,0,27,16,11,11,0,0,0,16,5Z"/><path d="M16,17a5,5,0,1,1,5-5A5,5,0,0,1,16,17Zm0-8a3,3,0,1,0,3,3A3,3,0,0,0,16,9Z"/><path d="M25.55,24a1,1,0,0,1-.74-.32A11.35,11.35,0,0,0,16.46,20h-.92a11.27,11.27,0,0,0-7.85,3.16,1,1,0,0,1-1.38-1.44A13.24,13.24,0,0,1,15.54,18h.92a13.39,13.39,0,0,1,9.82,4.32A1,1,0,0,1,25.55,24Z"/>
           </svg>
@@ -85,25 +85,36 @@
   </figcaption>
 </figure>
 <input type="checkbox" id="toggleClose" style="display: none;" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- En algún lugar de tu página principal -->
 
-
+          <div id="menuUsuarioContainer"></div>
 
 <label for="toggleClose" title="Click to Close" onclick="toggleCloseFunction()"></label>
 
 <script>
-  function toggleCloseFunction() {
-    // Aquí va la lógica para cerrar lo que necesites
-    console.log("Cerrar acción ejecutada");
-    // Ejemplo: document.getElementById('opciones').style.display = 'none';
-  }
+// Asegúrate de que jQuery esté incluido en tu proyecto.
+function cargarMenuUsuario() {
+    $.ajax({
+        url: 'UserMenu.jsp',
+        type: 'GET',
+        success: function(response) {
+            // Mostrar el contenido de UserMenu.jsp dentro de un contenedor específico
+            $('#menuUsuarioContainer').html(response);
+        },
+        error: function() {
+            alert('Error al cargar el menú de usuario.');
+        }
+    });
+}
+
 </script>
 
-        
-        <section class="contenidoDinamico" id="contenidoDinamico" >
+        <section class="contenidoDinamicoMenu" id="contenidoDinamicoMenu" >
         </section>
     </body>
     <!-- Funcion Ocultar y mostrar menu de usuario  -->
-    <script src="jsFunciones/UsuarioMenu.js"></script>
+    <script src="jsFunciones/UsuarioMenujs.js"></script>
     <script src="js/funcionesIndex.js"></script>
     <script src="js/funcionesLogin.js"></script>
     <script src="js/funcionesAltaUsuario.js"></script>
