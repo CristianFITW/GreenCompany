@@ -60,5 +60,6 @@
         </div>
         </div>
     </body>
+    <script src="jsFunciones/CURP.js"></script>
     <script src="js/funcionesAltaUsuario.js"></script>
 </html>
