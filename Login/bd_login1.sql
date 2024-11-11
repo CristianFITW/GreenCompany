@@ -14,11 +14,20 @@ CREATE TABLE `usuarios` (
 COLLATE='utf8mb4_0900_ai_ci'
 ENGINE=InnoDB;
 
-CREATE TABLE problematica (
+CREATE TABLE IF NOT EXISTS problematica (
     id INT AUTO_INCREMENT PRIMARY KEY,
     titulo VARCHAR(50) NOT NULL,
     descripcion TEXT NOT NULL,
     alcaldia VARCHAR(50) NOT NULL
 );
 
-select * from usuarios;
+
+CREATE TABLE evidencias (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    problematica_id INT,
+    ruta VARCHAR(255),
+    FOREIGN KEY (problematica_id) REFERENCES problematica(id) ON DELETE CASCADE
+);
+
+
+select * from evidencia_problematica;

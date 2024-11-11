@@ -69,5 +69,13 @@
 <div>
     Página <%= pagina %> de <%= totalPaginas %>
 </div>
+<!-- Formulario de Búsqueda -->
+<form action="AlcaldiaServlet" method="get">
+    <input type="hidden" name="nombre" value="<%= nombreAlcaldia %>">
+    <label>Buscar problemática:</label>
+    <input type="text" name="busqueda" placeholder="Título o Descripción">
+    <button type="submit">Buscar</button>
+</form>
+
 </body>
 </html>
