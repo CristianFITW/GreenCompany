@@ -18,10 +18,12 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <link rel="stylesheet" href="css/alcaldia.css" type="text/css" media="all">
     <meta charset="UTF-8">
     <title><%= nombreAlcaldia %> - Problemáticas</title>
 </head>
 <body>
+    <div class="albondigas"></div>j
     <h1>Problemáticas en <%= nombreAlcaldia %></h1>
 
     <!-- Formulario de Registro de Problemática -->
@@ -76,6 +78,5 @@
     <input type="text" name="busqueda" placeholder="Título o Descripción">
     <button type="submit">Buscar</button>
 </form>
-
 </body>
 </html>
