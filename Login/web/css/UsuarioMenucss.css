@@ -284,12 +284,7 @@ a:active::after {
   }
 }
 
-#welcomeMessage
-figcaption
-h1
-b
-a
-svg {
+#welcomeMessage figcaption h1 b a .unique-svg {
   position: relative;
   width: 55%;
   height: auto;
@@ -299,33 +294,18 @@ svg {
   transition: all 200ms linear;
 }
 
-#welcomeMessage
-figcaption
-h1
-b
-a:hover
-svg {
+#welcomeMessage figcaption h1 b a:hover .unique-svg {
   filter: grayscale(0%) brightness(1);
   transition: all 200ms ease-in-out;
 }
 
-#welcomeMessage
-figcaption
-h1
-b
-a:focus
-svg {
+#welcomeMessage figcaption h1 b a:focus .unique-svg {
   filter: grayscale(0%) brightness(1);
   transform: rotateY(-180deg) scale(0.9);
   transition: all 70ms linear;
 }
 
-
-#welcomeMessage
-figcaption
-h1
-b
-svg {
+#welcomeMessage figcaption h1 b .unique-svg {
   position: relative;
   width: 55%;
   height: auto;
@@ -335,24 +315,17 @@ svg {
   transition: all 200ms linear;
 }
 
-#welcomeMessage
-figcaption
-h1
-b:hover
-svg {
+#welcomeMessage figcaption h1 b:hover .unique-svg {
   filter: grayscale(0%) brightness(1);
   transition: all 200ms ease-in-out;
 }
 
-#welcomeMessage
-figcaption
-h1
-b:focus
-svg {
+#welcomeMessage figcaption h1 b:focus .unique-svg {
   filter: grayscale(0%) brightness(1);
   transform: rotateY(-180deg) scale(0.9);
   transition: all 70ms linear;
 }
+
 
 #toggleOpen:checked
   ~ #welcomeMessage {

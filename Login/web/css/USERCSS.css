@@ -3,21 +3,24 @@
     margin: 0;
     box-sizing: border-box;
 }
+
 boton {
     font-family: inherit;
 }
 
+.etiqueta {
+    padding: 5px;
+}
 
 .tarjeta {
     width: 200px;
-    background-color: rgba(36, 40, 50, 1);
+    background-color: rgba(255, 255, 255, 0.2); /* Blanco ligeramente más transparente */
     background-image: linear-gradient(
       139deg,
-      rgba(36, 40, 50, 1) 0%,
-      rgba(36, 40, 50, 1) 0%,
-      rgba(37, 28, 40, 1) 100%
+      rgba(255, 255, 255, 0.2) 0%, /* Blanco más transparente */
+      rgba(255, 255, 255, 0.2) 0%,
+      rgba(255, 255, 255, 0.3) 100% /* Fondo con un leve degradado */
     );
-
     border-radius: 10px;
     padding: 15px 0px;
     display: flex;
@@ -25,8 +28,13 @@ boton {
     gap: 10px;
 }
 
+.tarjeta {
+    transform: scaleX(-1);
+    display: inline-block;
+}
+
 .tarjeta .separador {
-    border-top: 1.5px solid #42434a;
+    border-top: 1.5px solid rgba(255, 255, 255, 0.4); /* Blanco semi-transparente */
 }
 
 .tarjeta .lista {
@@ -40,32 +48,34 @@ boton {
 .tarjeta .lista .elemento {
     display: flex;
     align-items: center;
-    color: #7e8590;
+    color: rgba(255, 255, 255, 0.8); /* Texto blanco menos transparente */
     gap: 10px;
     transition: all 0.3s ease-out;
     padding: 4px 7px;
     border-radius: 6px;
     cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo blanco más visible */
 }
 
 .tarjeta .lista .elemento svg {
-    width: 19px;
-    height: 19px;
+    width: 22px; /* Incrementado desde 19px */
+    height: 22px; /* Incrementado desde 19px */
     transition: all 0.3s ease-out;
 }
 
 .tarjeta .lista .elemento .etiqueta {
     font-weight: 600;
+    font-size: 15px;
 }
 
 .tarjeta .lista .elemento:hover {
-    background-color: #5353ff;
+    background-color: rgba(255, 255, 255, 0.4); /* Fondo más visible al pasar el cursor */
     color: #ffffff;
     transform: translate(1px, -1px);
 }
 
 .tarjeta .lista .eliminar:hover {
-    background-color: #8e2a2a;
+    background-color: rgba(255, 0, 0, 0.5); /* Rojo más opaco */
 }
 
 .tarjeta .lista .elemento:active {
@@ -73,11 +83,11 @@ boton {
 }
 
 .tarjeta .lista:not(:last-child) .elemento:hover svg {
-    stroke: #ffffff;
+    fill: inherit; /* Mantener color original */
 }
 
 .tarjeta .lista:last-child svg {
-    stroke: #bd89ff;
+    fill: inherit; /* Mantener color original */
 }
 
 .tarjeta .lista:last-child .elemento {
@@ -85,5 +95,5 @@ boton {
 }
 
 .tarjeta .lista:last-child .elemento:hover {
-    background-color: rgba(56, 45, 71, 0.836);
+    background-color: rgba(56, 45, 71, 0.9);
 }
