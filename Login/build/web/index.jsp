@@ -154,6 +154,7 @@ function cerrarMenuFuera(event) {
 
         <section class="contenidoDinamicoMenu" id="contenidoDinamicoMenu" >
         </section>
+<section class="contenidoDinamico" id="contenidoDinamico"></section>
     </body>
     <!-- Funcion Ocultar y mostrar menu de usuario  -->
     <script src="jsFunciones/UsuarioMenujs.js"></script>
