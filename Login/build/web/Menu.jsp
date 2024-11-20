@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Accesso a diseños de opcion Usuario -->
-        <link rel="stylesheet" href="css/UsuarioMenucss.css" type="text/css" media="all">
+        <link rel="stylesheet" href="css/UsuarioMenu.css" type="text/css" media="all">
     </head>
     <body>
         <div class="papasGratinadas" id="menu-horizontal">

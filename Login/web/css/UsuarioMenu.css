@@ -81,9 +81,10 @@ body {
   backface-visibility: hidden;
 }
 
-input {
-  display: none;
+.ocultar {
+    display: none;
 }
+
 
 #welcomeMessage {
   font-size: 130%;

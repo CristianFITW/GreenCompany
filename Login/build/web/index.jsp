@@ -5,12 +5,13 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Accesso a diseños de opcion Usuario -->
-        <link rel="stylesheet" href="css/UsuarioMenucss.css" type="text/css" media="all">
+        <link rel="stylesheet" href="css/UsuarioMenu.css" type="text/css" media="all">
         <link rel="stylesheet" href="css/estilosLogin.css" type="text/css" media="all">
     </head>
     <body>
-<input type="radio" name="toggle" id="toggleOpen" value="toggleOpen">
-<input type="radio" name="toggle" id="toggleClose" value="toggleClose">
+<input type="radio" name="toggle" id="toggleOpen" value="toggleOpen" class="ocultar">
+<input type="radio" name="toggle" id="toggleClose" value="toggleClose" class="ocultar">
+
 <figure id="welcomeMessage">
   <figcaption>
     <h1>
