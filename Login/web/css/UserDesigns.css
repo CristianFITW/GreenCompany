@@ -1,0 +1,142 @@
+/* Reseteo de márgenes y padding por defecto */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo para el botón, si se usa dentro de la tarjeta */
+boton {
+    font-family: inherit;
+}
+
+/* Estilos para las etiquetas dentro de los elementos */
+.etiqueta {
+    padding: 5px;
+}
+
+/* Estilo general para la tarjeta */
+.tarjeta {
+    width: 200px;
+    background-color: rgba(255, 255, 255, 0.2); /* Blanco ligeramente más transparente */
+    background-image: linear-gradient(
+      139deg,
+      rgba(255, 255, 255, 0.2) 0%, /* Blanco más transparente */
+      rgba(255, 255, 255, 0.2) 0%,
+      rgba(255, 255, 255, 0.3) 100% /* Fondo con un leve degradado */
+    );
+    border-radius: 10px;
+    padding: 15px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transform: scaleX(-1); /* Volteo horizontal de la tarjeta */
+    display: inline-block;
+}
+
+/* Estilo para el separador entre elementos en la tarjeta */
+.tarjeta .separador {
+    border-top: 1.5px solid rgba(255, 255, 255, 0.4); /* Blanco semi-transparente */
+}
+
+/* Estilo para la lista dentro de la tarjeta */
+.tarjeta .lista {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0px 10px;
+}
+
+/* Estilo para cada elemento dentro de la lista */
+.tarjeta .lista .elemento {
+    display: flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.8); /* Texto blanco menos transparente */
+    gap: 10px;
+    transition: all 0.3s ease-out;
+    padding: 4px 7px;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo blanco más visible */
+}
+
+/* Estilo para los iconos dentro de los elementos */
+.tarjeta .lista .elemento svg {
+    width: 22px; /* Incrementado desde 19px */
+    height: 22px; /* Incrementado desde 19px */
+    transition: all 0.3s ease-out;
+}
+
+/* Estilo para el texto dentro de los elementos */
+.tarjeta .lista .elemento .etiqueta {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+/* Estilo cuando se pasa el mouse sobre un elemento de la lista */
+.tarjeta .lista .elemento:hover {
+    background-color: rgba(255, 255, 255, 0.4); /* Fondo más visible al pasar el cursor */
+    color: #ffffff;
+    transform: translate(1px, -1px); /* Efecto de movimiento */
+}
+
+/* Estilo para el icono de eliminar */
+.tarjeta .lista .eliminar:hover {
+    background-color: rgba(255, 0, 0, 0.5); /* Rojo más opaco */
+}
+
+/* Efecto de pulsación al hacer clic en un elemento */
+.tarjeta .lista .elemento:active {
+    transform: scale(0.99); /* Efecto de pulsación */
+}
+
+/* Para que el icono mantenga su color original en algunos elementos */
+.tarjeta .lista:not(:last-child) .elemento:hover svg {
+    fill: inherit; /* Mantener color original */
+}
+
+/* Asegurando que el último hijo tenga el color original del icono */
+.tarjeta .lista:last-child svg {
+    fill: inherit; /* Mantener color original */
+}
+
+/* Estilo específico para el último elemento de la lista */
+.tarjeta .lista:last-child .elemento {
+    color: #bd89ff; /* Color morado para el último elemento */
+}
+
+/* Efecto hover para el último elemento */
+.tarjeta .lista:last-child .elemento:hover {
+    background-color: rgba(56, 45, 71, 0.9); /* Fondo oscuro cuando hover en el último */
+}
+
+/* Nuevas reglas específicas para los elementos de navegación y los iconos */
+.tarjeta .lista .elemento svg path {
+    stroke: #7e8590; /* Color gris para los iconos */
+    fill: none; /* Evitar que se llene el ícono con color */
+}
+
+/* Estilo para el texto dentro de los elementos */
+.tarjeta .lista .elemento p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease-out;
+}
+
+/* Cambio de color al pasar el mouse sobre el texto */
+.tarjeta .lista .elemento p:hover {
+    color: #bd89ff; /* Cambia el color del texto al pasar el cursor */
+}
+
+/* Estilo para el elemento "eliminar" cuando se pasa el cursor */
+.tarjeta .lista .elemento.eliminar:hover {
+    background-color: rgba(255, 0, 0, 0.5); /* Rojo al pasar por encima */
+}
+
+/* Efecto de pulsación para el elemento */
+.tarjeta .lista .elemento:active {
+    transform: scale(0.98); /* Efecto visual de pulsación */
+}
