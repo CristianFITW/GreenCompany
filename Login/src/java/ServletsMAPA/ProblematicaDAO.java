@@ -24,7 +24,8 @@ public class ProblematicaDAO {
                     rs.getString("id"),
                     rs.getString("titulo"),
                     rs.getString("descripcion"),
-                    rs.getString("alcaldia")
+                    rs.getString("alcaldia"),
+                    rs.getString("usuario")
                 );
                 problematicas.add(p);
             }
@@ -69,7 +70,8 @@ public class ProblematicaDAO {
                     rs.getString("id"),
                     rs.getString("titulo"),
                     rs.getString("descripcion"),
-                    rs.getString("alcaldia")
+                    rs.getString("alcaldia"),
+                    rs.getString("usuario")
                 );
             }
         } catch (SQLException e) {
@@ -80,13 +82,14 @@ public class ProblematicaDAO {
 
     // Agregar problemática
     public void agregarProblematica(Problematica problematica) {
-        String query = "INSERT INTO problematica (titulo, descripcion, alcaldia) VALUES (?, ?, ?)";
+        String query = "INSERT INTO problematica (titulo, descripcion, alcaldia, usuario) VALUES (?, ?, ?, ?)";
 
         try (Connection con = Conexion.getConnection();
              PreparedStatement ps = con.prepareStatement(query)) {
             ps.setString(1, problematica.getTitulo());
             ps.setString(2, problematica.getDescripcion());
             ps.setString(3, problematica.getAlcaldia());
+            ps.setString(4, problematica.getUsuario());
             ps.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -126,7 +129,8 @@ public List<Problematica> obtenerProblematicasPaginadas(String alcaldia, String 
                 rs.getString("id"),
                 rs.getString("titulo"),
                 rs.getString("descripcion"),
-                rs.getString("alcaldia")
+                rs.getString("alcaldia"),
+                rs.getString("usuario")
             );
             problematicas.add(p);
         }

@@ -26,7 +26,8 @@ public class ProblematicaServlet extends HttpServlet {
 // En el método doPost, asegúrate de recibir y asignar correctamente el valor de "titulo"
 String titulo = request.getParameter("titulo");
 String descripcion = request.getParameter("problematica");
-Problematica nuevaProblematica = new Problematica(null, titulo, descripcion, nombreAlcaldia);
+String usuario = request.getParameter("usuario");
+Problematica nuevaProblematica = new Problematica(null, titulo, descripcion, nombreAlcaldia, usuario);
 dao.agregarProblematica(nuevaProblematica);
 
         // Obtener las problemáticas para la página actual
@@ -55,8 +56,9 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response) 
     if ("alta".equals(action)) {
         String titulo = request.getParameter("titulo");
         String descripcion = request.getParameter("problematica");
+        String usuario = request.getParameter("usuario");
 
-        Problematica nuevaProblematica = new Problematica(null, titulo, descripcion, nombreAlcaldia);
+        Problematica nuevaProblematica = new Problematica(null, titulo, descripcion, nombreAlcaldia, usuario);
         dao.agregarProblematica(nuevaProblematica);
     } else if ("eliminar".equals(action)) {
         String id = request.getParameter("id");

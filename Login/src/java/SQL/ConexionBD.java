@@ -17,7 +17,7 @@ import java.sql.SQLException;
  */
 public class ConexionBD {
     
-    private static String url = "jdbc:mysql://127.0.0.1:3306/bd_login2"; //127.0.0.1 = localhost
+    private static String url = "jdbc:mysql://127.0.0.1:3306/bd_login3"; //127.0.0.1 = localhost
     private static String usuario = "root";
     private static String contrasena = "n0m3l0";
     

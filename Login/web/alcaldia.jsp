@@ -33,6 +33,8 @@
         <input type="text" name="titulo" required><br><br>
         <label>Descripcón</label>
         <textarea name="problematica" required></textarea><br><br>
+        <label>Título de tu problemática</label>
+        <input type="text" name="usuario" required><br><br>
         <button type="submit" name="action" value="alta">Enviar</button>
     </form>
 
@@ -42,6 +44,7 @@
     <tr>
         <th>Titulo</th>
         <th>Problemática</th>
+        <th>Usuario</th>
         <th>Acciones</th>
     </tr>
     <% for (Problematica p : problematicas) { %>
@@ -50,6 +53,7 @@
             <td>
                 <%= p.getDescripcion().length() > 15 ? p.getDescripcion().substring(0, 15) + "..." : p.getDescripcion() %>
             </td>
+            <td><%= p.getUsuario().length() > 45 ? p.getUsuario().substring(0, 45) : p.getUsuario() %></td>
             <td>
                 <form action="ProblematicaServlet" method="post">
                     <input type="hidden" name="action" value="eliminar">

@@ -5,12 +5,14 @@ public class Problematica {
     private String titulo;
     private String descripcion;
     private String alcaldia;
+    private String usuario;
 
-    public Problematica(String id, String titulo, String descripcion, String alcaldia) {
+    public Problematica(String id, String titulo, String descripcion, String alcaldia, String usuario) {
         this.id = id;
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.alcaldia = alcaldia;
+        this.usuario = usuario;
     }
 
     // Getters y setters
@@ -25,4 +27,7 @@ public class Problematica {
 
     public String getAlcaldia() { return alcaldia; }
     public void setAlcaldia(String alcaldia) { this.alcaldia = alcaldia; }
+    
+    public String getUsuario() { return usuario; }
+    public void setUsuario(String usuario) {this.usuario = usuario; }
 }
