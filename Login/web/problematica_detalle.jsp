@@ -17,6 +17,7 @@
     <h2>Alcaldía: <%= nombreAlcaldia %></h2>
 
     <p><strong>Titulo:</strong> <%= problematica.getTitulo() %></p>
+    <p><strong>Usuario:</strong> <%= problematica.getUsuario() %></p>
     <p><strong>Descripción:</strong></p>
     <p><%= problematica.getDescripcion() %></p>
 
