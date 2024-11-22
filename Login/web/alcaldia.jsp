@@ -14,7 +14,13 @@
         totalPaginas = 1;  // Valor predeterminado si es nulo
     }
 %>
-
+        <%
+        response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+        
+        if(session.getAttribute("txtUsuario") == null && session.getAttribute("nombre") == null){
+            response.sendRedirect("index.jsp");
+        }
+        %>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -23,20 +29,23 @@
     <title><%= nombreAlcaldia %> - Problemáticas</title>
 </head>
 <body>
-    <div class="albondigas"></div>j
+    <div class="albondigas"></div>
     <h1>Problemáticas en <%= nombreAlcaldia %></h1>
 
     <!-- Formulario de Registro de Problemática -->
-    <form action="ProblematicaServlet" method="post">
-        <input type="hidden" name="nombreAlcaldia" value="<%= nombreAlcaldia %>">
-        <label>Título de tu problemática</label>
-        <input type="text" name="titulo" required><br><br>
-        <label>Descripcón</label>
-        <textarea name="problematica" required></textarea><br><br>
-        <label>Título de tu problemática</label>
-        <input type="text" name="usuario" required><br><br>
-        <button type="submit" name="action" value="alta">Enviar</button>
-    </form>
+<form action="ProblematicaServlet" method="post">
+    <input type="hidden" name="nombreAlcaldia" value="<%= nombreAlcaldia %>">
+    <label>Título de tu problemática</label>
+    <input type="text" name="titulo" required><br><br>
+    <label>Descripción</label>
+    <textarea name="problematica" required></textarea><br><br>
+    
+    <!-- Campo oculto para el usuario, se llena con el valor de la sesión -->
+    <input type="hidden" name="usuario" value="<%= session.getAttribute("nombre") %>">
+
+    <button type="submit" name="action" value="alta">Enviar</button>
+</form>
+
 
 <!-- Tabla de Problemáticas -->
 <h2>Lista de Problemáticas</h2>
