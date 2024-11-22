@@ -18,15 +18,16 @@ function usuarioGeneradoAutomaticamente() {
 
     var nombre = document.getElementById("txtNombre");
     var apellidos = document.getElementById("txtApellidos");
+    var curp = document.getElementById("txtCurp");
 
     var usuarioGeneradoAutomaticamente = document.getElementById("txtUsuarioGeneradoAutomaticamente");
 
 
-    var resultadoCombinado = nombre.value.slice(0, 3) + apellidos.value.slice(0, 3) + "@greencompany.com";
+var resultadoCombinado = nombre.value.slice(0, 3) + apellidos.value.slice(0, 3) + curp.value.slice(-3) + "@greencompany.com";
 
     usuarioGeneradoAutomaticamente.value = resultadoCombinado;
 
-    if (nombre.value.length == 0 || apellidos.value.length == 0) {
+    if (nombre.value.length == 0 || apellidos.value.length == 0 || curp.value.length == 0) {
         usuarioGeneradoAutomaticamente.value = "";
     }
 }

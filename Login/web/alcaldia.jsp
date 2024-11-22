@@ -29,6 +29,71 @@
     <title><%= nombreAlcaldia %> - Problemáticas</title>
 </head>
 <body>
+        <style>html,
+        body {
+            height: 100%;
+        }
+       
+        body {
+            margin: 0;
+            background: linear-gradient(45deg, #49a09d, #5f2c82);
+            font-family: sans-serif;
+            font-weight: 100;
+        }
+       
+        .galactic-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+       
+        .celestial-table {
+            width: 800px;
+            border-collapse: collapse;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+       
+        .star-header,
+        .lunar-cell {
+            padding: 15px;
+            background-color: rgba(255,255,255,0.2);
+            color: #fff;
+        }
+       
+        .star-header {
+            text-align: left;
+        }
+       
+        .cosmic-head {
+            .star-header {
+                background-color: #55608f;
+            }
+        }
+       
+        .astro-body {
+            .astro-row {
+                &:hover {
+                    background-color: rgba(255,255,255,0.3);
+                }
+            }
+            .lunar-cell {
+                position: relative;
+                &:hover {
+                    &:before {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        right: 0;
+                        top: -9999px;
+                        bottom: -9999px;
+                        background-color: rgba(255,255,255,0.2);
+                        z-index: -1;
+                    }
+                }
+            }
+        }</style>
     <div class="albondigas"></div>
     <h1>Problemáticas en <%= nombreAlcaldia %></h1>
 
@@ -49,21 +114,24 @@
 
 <!-- Tabla de Problemáticas -->
 <h2>Lista de Problemáticas</h2>
-<table border="1">
+<div class="galactic-center">
+<table class="celestial-table">
+    <thead class="cosmic-head">
     <tr>
-        <th>Titulo</th>
-        <th>Problemática</th>
-        <th>Usuario</th>
-        <th>Acciones</th>
-    </tr>
+        <th class="star-header">Titulo</th>
+        <th class="star-header">Problemática</th>
+        <th class="star-header">Usuario</th>
+        <th class="star-header">Acciones</th>
+    </tr></thead>
+    <tbody class="astro-body">
     <% for (Problematica p : problematicas) { %>
-        <tr>
-            <td><%= p.getTitulo().length() > 45 ? p.getTitulo().substring(0, 45) : p.getTitulo() %></td>
-            <td>
+        <tr class="astro-row">
+            <td class="lunar-cell"><%= p.getTitulo().length() > 45 ? p.getTitulo().substring(0, 45) : p.getTitulo() %></td>
+            <td class="lunar-cell">
                 <%= p.getDescripcion().length() > 15 ? p.getDescripcion().substring(0, 15) + "..." : p.getDescripcion() %>
             </td>
-            <td><%= p.getUsuario().length() > 45 ? p.getUsuario().substring(0, 45) : p.getUsuario() %></td>
-            <td>
+            <td class="lunar-cell"><%= p.getUsuario().length() > 45 ? p.getUsuario().substring(0, 45) : p.getUsuario() %></td>
+            <td class="lunar-cell">
                 <form action="ProblematicaServlet" method="post">
                     <input type="hidden" name="action" value="eliminar">
                     <input type="hidden" name="id" value="<%= p.getId() %>">
@@ -73,9 +141,9 @@
                 <a href="ProblematicaDetalleServlet?id=<%= p.getId() %>&nombre=<%= nombreAlcaldia %>">Ver completo</a>
             </td>
         </tr>
-    <% } %>
+    <% } %></tbody>
 </table>
-
+</div>
 <!-- Paginación -->
 <div>
     <button <% if (pagina == 1) out.print("disabled"); %> onclick="location.href='ProblematicaServlet?nombre=<%= nombreAlcaldia %>&pagina=<%= pagina - 1 %>'">Anterior</button>
