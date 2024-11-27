@@ -40,6 +40,7 @@ public class Guardar extends HttpServlet {
         String txtApellidos = request.getParameter("txtApellidos");
         String txtContrasena = request.getParameter("txtContrasena");
         String txtUsuarioGeneradoAutomaticamente = request.getParameter("txtUsuarioGeneradoAutomaticamente");
+        
 
         out.println("<!DOCTYPE html>");
         out.println("<html>");

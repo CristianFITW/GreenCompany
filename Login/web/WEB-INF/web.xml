@@ -24,6 +24,15 @@
         <servlet-name>CerrarSesion</servlet-name>
         <url-pattern>/CerrarSesionServlet</url-pattern>
     </servlet-mapping>
+        <servlet>
+        <servlet-name>UploadServlet</servlet-name>
+        <servlet-class>Servlets.UploadServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>UploadServlet</servlet-name>
+        <url-pattern>/GuardarServlet1</url-pattern>
+    </servlet-mapping>
 <servlet>
 <servlet-name>AlcaldiaServlet</servlet-name>
 <servlet-class>ServletsMAPA.AlcaldiaServlet</servlet-class>
