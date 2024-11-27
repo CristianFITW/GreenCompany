@@ -20,18 +20,20 @@ public class MetodosSQL {
     private PreparedStatement sentenciaPreparada;
     private ResultSet resultado;
 
-    public boolean registrarUsuario(String curp, String nombre, String apellidos, String contrasena, String usuarioGeneradoAutomaticamente) {
+    public boolean registrarUsuario(String curp, String nombre, String apellidos, String contrasena, String usuarioGeneradoAutomaticamente, String nombrei, String ruta) {
         boolean registro = false;
 
         try {
             conexion = ConexionBD.conectar();
-            String consulta = "INSERT INTO usuarios (curp,nombre,apellidos,contrasena,usuario_generado_automaticamente) VALUES (?,?,?,?,?)";
+            String consulta = "INSERT INTO usuarios (curp,nombre,apellidos,contrasena,usuario_generado_automaticamente,nombrei,ruta) VALUES (?,?,?,?,?,?,?)";
             sentenciaPreparada = conexion.prepareStatement(consulta);
             sentenciaPreparada.setString(1, curp);
             sentenciaPreparada.setString(2, nombre);
             sentenciaPreparada.setString(3, apellidos);
             sentenciaPreparada.setString(4, contrasena);
             sentenciaPreparada.setString(5, usuarioGeneradoAutomaticamente);
+            sentenciaPreparada.setString(6, nombrei);
+            sentenciaPreparada.setString(7, ruta);
 
             int resultadoInsercion = sentenciaPreparada.executeUpdate();
 

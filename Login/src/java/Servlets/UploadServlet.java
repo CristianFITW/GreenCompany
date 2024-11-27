@@ -73,25 +73,26 @@ public class UploadServlet extends HttpServlet {
                         checkStatement.setString(1, curp);
                         ResultSet resultSet = checkStatement.executeQuery();
 
-                        if (resultSet.next()) {
-                            // Si existe el CURP, hacer un UPDATE
-                            String updateSql = "UPDATE usuarios SET nombrei = ?, ruta = ? WHERE curp = ?";
-                            try (PreparedStatement updateStatement = conn.prepareStatement(updateSql)) {
-                                updateStatement.setString(1, uniqueFileName);  // Nombre de la imagen
-                                updateStatement.setString(2, filePath);  // Ruta del archivo
-                                updateStatement.setString(3, curp);  // CURP para actualizar el registro
-                                updateStatement.executeUpdate();
-                            }
-                        } else {
-                            // Si no existe, hacer un INSERT
-                            String insertSql = "INSERT INTO usuarios (curp, nombrei, ruta) VALUES (?, ?, ?)";
-                            try (PreparedStatement insertStatement = conn.prepareStatement(insertSql)) {
-                                insertStatement.setString(1, curp);  // Guardar el CURP
-                                insertStatement.setString(2, uniqueFileName);  // Guardar el nombre único
-                                insertStatement.setString(3, filePath);  // Guardar la ruta del archivo
-                                insertStatement.executeUpdate();
-                            }
-                        }
+if (resultSet.next()) {
+    // Si existe el CURP, hacer un UPDATE
+    String updateSql = "UPDATE usuarios SET nombrei = ?, ruta = ? WHERE curp = ?";
+    try (PreparedStatement updateStatement = conn.prepareStatement(updateSql)) {
+        updateStatement.setString(1, uniqueFileName);  // Nombre de la imagen
+        updateStatement.setString(2, filePath);  // Ruta del archivo
+        updateStatement.setString(3, curp);  // CURP para actualizar el registro
+        updateStatement.executeUpdate();
+    }
+} else {
+    // Si no existe, hacer un INSERT
+    String insertSql = "INSERT INTO usuarios (curp, nombrei, ruta) VALUES (?, ?, ?)";
+    try (PreparedStatement insertStatement = conn.prepareStatement(insertSql)) {
+        insertStatement.setString(1, curp);  // Guardar el CURP
+        insertStatement.setString(2, uniqueFileName);  // Guardar el nombre único
+        insertStatement.setString(3, filePath);  // Guardar la ruta del archivo
+        insertStatement.executeUpdate();
+    }
+}
+
                     }
                 } catch (SQLException e) {
                     e.printStackTrace();

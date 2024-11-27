@@ -40,7 +40,8 @@ public class Guardar extends HttpServlet {
         String txtApellidos = request.getParameter("txtApellidos");
         String txtContrasena = request.getParameter("txtContrasena");
         String txtUsuarioGeneradoAutomaticamente = request.getParameter("txtUsuarioGeneradoAutomaticamente");
-        
+        String txtNombrei = request.getParameter("txtNombrei");
+        String txtRuta = request.getParameter("txtRuta");
 
         out.println("<!DOCTYPE html>");
         out.println("<html>");
@@ -54,7 +55,7 @@ public class Guardar extends HttpServlet {
             out.println("location='index.html'");
         } else {
             
-            boolean registro = metodos.registrarUsuario(txtCurp, txtNombre, txtApellidos, txtContrasena, txtUsuarioGeneradoAutomaticamente);
+            boolean registro = metodos.registrarUsuario(txtCurp, txtNombre, txtApellidos, txtContrasena, txtUsuarioGeneradoAutomaticamente, txtNombrei, txtRuta);
             if (registro == true) {//El usuario se ha registrado
                 out.println("alert('El usuario se ha registrado con exito :) ')");
                 out.println("location='index.jsp'");

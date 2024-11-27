@@ -50,7 +50,15 @@
                         <label>Usuario Generado Automáticamente:</label>
                         <input type="text" class="input-field" id="txtUsuarioGeneradoAutomaticamente" required="" readonly="" name="txtUsuarioGeneradoAutomaticamente">
                     </div>
-                    
+                    <div class="field">
+                        <label>Apellidos:</label>
+                        <input type="text" class="input-field" id="txtNombrei" required="" name="txtNombrei">
+                    </div>
+                    <div class="field">
+                        <label>Apellidos:</label>
+                        <input type="text" class="input-field" id="txtRuta" required="" name="txtRuta">
+                    </div>
+
                     <div class="btn">
                         <input type="submit" value="Enviar Datos" class="button1" id="btnEnviarDatos" disabled="">
                         <input type="button" value="Borrar Datos" class="button2" id="btnBorrar" onclick="resetearFormulario()">

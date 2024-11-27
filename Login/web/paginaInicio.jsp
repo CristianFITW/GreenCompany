@@ -20,6 +20,7 @@
             <p><a href="https://www.google.com">IR A GOOGLE</a></p>
 
             <p> Actualmente en uso: ${txtUsuario} </p>
+        <img src="${imagen}" alt="Imagen Subida" style="max-width: 300px;"/>
 
             <form action="CerrarSesionServlet">
                 <input type="submit" value="Cerrar Sesión">
