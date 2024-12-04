@@ -42,14 +42,19 @@
         }
        
         .galactic-center {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+margin: 0;
+background: linear-gradient(45deg, #49a09d, #5f2c82);
+font-family: sans-serif;
+font-weight: 100;
+position: absolute;
+bottom: 20px; /* Ajusta el valor según el padding deseado */
+right: 20px;  /* Ajusta el valor según el padding deseado */
+transform: none; /* Se elimina el transform para no centrar el elemento */
+
         }
        
         .celestial-table {
-            width: 800px;
+            width: 700px;
             border-collapse: collapse;
             overflow: hidden;
             box-shadow: 0 0 20px rgba(0,0,0,0.1);
@@ -57,7 +62,7 @@
        
         .star-header,
         .lunar-cell {
-            padding: 15px;
+            padding: 10px;
             background-color: rgba(255,255,255,0.2);
             color: #fff;
         }
@@ -93,24 +98,139 @@
                     }
                 }
             }
-        }</style>
+        }</style>    <style>
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+button {
+  font-family: inherit;
+}
+
+.form-container {
+  width: 400px;
+  background: linear-gradient(#212121, #212121) padding-box,
+              linear-gradient(145deg, transparent 35%,#e81cff, #40c9ff) border-box;
+  border: 2px solid transparent;
+  padding: 32px 24px;
+  font-size: 14px;
+  font-family: inherit;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-sizing: border-box;
+  border-radius: 16px;
+}
+
+.form-container button:active {
+  scale: 0.95;
+}
+
+.form-container .form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-container .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.form-container .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #717171;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.form-container .form-group input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  color: #fff;
+  font-family: inherit;
+  background-color: transparent;
+  border: 1px solid #414141;
+}
+
+.form-container .form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  resize: none;
+  color: #fff;
+  height: 96px;
+  border: 1px solid #414141;
+  background-color: transparent;
+  font-family: inherit;
+}
+
+.form-container .form-group input::placeholder {
+  opacity: 0.5;
+}
+
+.form-container .form-group input:focus {
+  outline: none;
+  border-color: #e81cff;
+}
+
+.form-container .form-group textarea:focus {
+  outline: none;
+  border-color: #e81cff;
+}
+
+.form-container .form-submit-btn {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  align-self: flex-start;
+  font-family: inherit;
+  color: #717171;
+  font-weight: 600;
+  width: 40%;
+  background: #313131;
+  border: 1px solid #414141;
+  padding: 12px 16px;
+  font-size: inherit;
+  gap: 8px;
+  margin-top: 8px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.form-container .form-submit-btn:hover {
+  background-color: #fff;
+  border-color: #fff;
+}
+
+
+
+
+    </style>
     <div class="albondigas"></div>
     <h1>Problemáticas en <%= nombreAlcaldia %></h1>
 
     <!-- Formulario de Registro de Problemática -->
-<form action="ProblematicaServlet" method="post">
-    <input type="hidden" name="nombreAlcaldia" value="<%= nombreAlcaldia %>">
-    <label>Título de tu problemática</label>
-    <input type="text" name="titulo" required><br><br>
-    <label>Descripción</label>
-    <textarea name="problematica" required></textarea><br><br>
-    
-    <!-- Campo oculto para el usuario, se llena con el valor de la sesión -->
-    <input type="hidden" name="usuario" value="<%= session.getAttribute("nombre") %>">
-
-    <button type="submit" name="action" value="alta">Enviar</button>
-</form>
-
+    <div class="form-container">
+        <form class="form" action="ProblematicaServlet" method="post">
+                <input type="hidden" name="nombreAlcaldia" value="<%= nombreAlcaldia %>">
+                <input type="hidden" name="usuario" value="<%= session.getAttribute("nombre") %>">
+          <div class="form-group">
+            <label for="email">Título de tu problemática</label>
+            <input type="text" name="titulo" required>
+          </div>
+          <div class="form-group">
+            <label for="textarea">Descripción</label>
+            <textarea name="problematica" id="textarea" rows="10" cols="50" required="">          </textarea>
+          </div>
+          <button class="form-submit-btn" type="submit" name="action" value="alta">Enviar</button>
+        </form>
+      </div>
 
 <!-- Tabla de Problemáticas -->
 <h2>Lista de Problemáticas</h2>
