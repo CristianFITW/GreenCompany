@@ -4,7 +4,7 @@
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- Accesso a diseños de opcion Usuario -->
+        <!-- Accesso a diseÃ±os de opcion Usuario -->
         <link rel="stylesheet" href="css/UsuarioMenu.css" type="text/css" media="all">
         <link rel="stylesheet" href="css/estilosLogin.css" type="text/css" media="all">
     </head>
@@ -59,7 +59,7 @@
         </a>
       </b>
       <b>
-        Ú
+        Ãš
         <a href="javascript:void(0);" title="Proximamente">
 <svg class="unique-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" viewBox="0 0 32 32" xml:space="preserve">
 			<path d="M17.6,30c0,1.102-0.895,2-2,2s-2-0.898-2-2c0-1.109,0.895-2,2-2S17.6,28.891,17.6,30z"/>
@@ -88,7 +88,7 @@
 </figure>
 <input type="checkbox" id="toggleClose" style="display: none;" />
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<!-- En algún lugar de tu página principal -->
+<!-- En algÃºn lugar de tu pÃ¡gina principal -->
 
           
           <div id="menuUsuarioContainer"></div>
@@ -96,13 +96,13 @@
 <label for="toggleClose" title="Click to Close" onclick="toggleCloseFunction()"></label>
 <style>
 #menuUsuario {
-  position: relative; /* Asegura que el menú se relacione con este elemento */
+  position: relative; /* Asegura que el menÃº se relacione con este elemento */
 }
 
 #menuUsuarioContainer {
   position: absolute;
-  top: 110%; /* Baja el menú un poco más */
-  left: 50%; /* Coloca el menú en el centro horizontalmente */
+  top: 110%; /* Baja el menÃº un poco mÃ¡s */
+  left: 50%; /* Coloca el menÃº en el centro horizontalmente */
   transform: translateX(-50%); /* Ajusta para centrarlo completamente */
   background-color: #ffffff00; /* Fondo transparente o color deseado */
   z-index: 100; /* Asegura que se muestre encima de otros elementos */
@@ -111,9 +111,9 @@
 
 </style>
 <script>
-// Asegúrate de que jQuery esté incluido en tu proyecto.
+// AsegÃºrate de que jQuery estÃ© incluido en tu proyecto.
 $(document).ready(function () {
-    // Añadimos el evento global al cargar la página
+    // AÃ±adimos el evento global al cargar la pÃ¡gina
     $(document).on('click', function (event) {
         cerrarMenuFuera(event);
     });
@@ -122,18 +122,18 @@ $(document).ready(function () {
 function cargarMenuUsuario() {
     const menu = $('#menuUsuarioContainer');
     if (menu.is(':visible')) {
-        menu.hide(); // Si el menú ya está visible, lo ocultamos
+        menu.hide(); // Si el menÃº ya estÃ¡ visible, lo ocultamos
     } else {
-        // Cargamos el contenido del menú
+        // Cargamos el contenido del menÃº
         $.ajax({
             url: 'UserMenu.jsp',
             type: 'GET',
             success: function (response) {
                 // Mostrar el contenido de UserMenu.jsp dentro del contenedor
-                menu.html(response).show(); // Mostrar y actualizar el menú
+                menu.html(response).show(); // Mostrar y actualizar el menÃº
             },
             error: function () {
-                alert('Error al cargar el menú de usuario.');
+                alert('Error al cargar el menÃº de usuario.');
             }
         });
     }
@@ -143,10 +143,10 @@ function cerrarMenuFuera(event) {
     const menu = $('#menuUsuarioContainer');
     const boton = $('#menuUsuario');
 
-    // Verifica si el clic fue fuera del menú y del botón
+    // Verifica si el clic fue fuera del menÃº y del botÃ³n
     if (!menu.is(event.target) && menu.has(event.target).length === 0 &&
         !boton.is(event.target) && boton.has(event.target).length === 0) {
-        menu.hide(); // Oculta el menú
+        menu.hide(); // Oculta el menÃº
     }
 }
 </script>
