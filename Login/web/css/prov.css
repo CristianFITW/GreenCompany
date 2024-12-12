@@ -1,0 +1,13 @@
+#menuUsuario {
+  position: relative; /* Asegura que el menú se relacione con este elemento */
+}
+
+#menuUsuarioContainer {
+  position: absolute;
+  top: 110%; /* Baja el menú un poco más */
+  left: 50%; /* Coloca el menú en el centro horizontalmente */
+  transform: translateX(-50%); /* Ajusta para centrarlo completamente */
+  background-color: #ffffff00; /* Fondo transparente o color deseado */
+  z-index: 100; /* Asegura que se muestre encima de otros elementos */
+  padding: 10px; /* Opcional: Ajusta el espacio interno si es necesario */
+}
