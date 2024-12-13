@@ -102,13 +102,11 @@ background: linear-gradient(45deg, #49a09d, #5f2c82);
 font-family: sans-serif;
 font-weight: 100;
 position: absolute;
-<<<<<<< HEAD
 bottom: 20px; /* Ajusta el valor según el padding deseado */
 right: 20px;  /* Ajusta el valor según el padding deseado */
-=======
+
 bottom: 25px; /* Ajusta el valor según el padding deseado */
 right: 25px;  /* Ajusta el valor según el padding deseado */
->>>>>>> mi-nueva-rama
 transform: none; /* Se elimina el transform para no centrar el elemento */
 
         }
@@ -122,11 +120,8 @@ transform: none; /* Se elimina el transform para no centrar el elemento */
        
         .star-header,
         .lunar-cell {
-<<<<<<< HEAD
             padding: 10px;
-=======
             padding: 5px;
->>>>>>> mi-nueva-rama
             background-color: rgba(255,255,255,0.2);
             color: #fff;
         }
@@ -163,10 +158,7 @@ transform: none; /* Se elimina el transform para no centrar el elemento */
                 }
             }
         }</style>    <style>
-<<<<<<< HEAD
-=======
             
->>>>>>> mi-nueva-rama
 * {
   padding: 0;
   margin: 0;
@@ -175,7 +167,6 @@ transform: none; /* Se elimina el transform para no centrar el elemento */
 button {
   font-family: inherit;
 }
-<<<<<<< HEAD
 
 .form-container {
   width: 400px;
@@ -191,7 +182,6 @@ button {
   gap: 20px;
   box-sizing: border-box;
   border-radius: 16px;
-=======
 .fo1{  padding: 110px 220px;
 }
 .form-container {
@@ -208,7 +198,6 @@ button {
     gap: 20px;
     box-sizing: border-box;
     border-radius: 16px;
->>>>>>> mi-nueva-rama
 }
 
 .form-container button:active {
@@ -230,11 +219,8 @@ button {
 .form-container .form-group label {
   display: block;
   margin-bottom: 5px;
-<<<<<<< HEAD
   color: #717171;
-=======
   color: white;
->>>>>>> mi-nueva-rama
   font-weight: 600;
   font-size: 12px;
 }
