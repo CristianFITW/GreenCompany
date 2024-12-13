@@ -1,0 +1,184 @@
+/* styles.css */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #EBDECF;
+    color: black;
+    text-align: center;
+    }
+    
+    .navbar {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    background-color: #f5f5f5; /* Light gray background for the navbar */
+    }
+    
+    .navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    }
+    
+    .navbar li {
+    display: inline;
+    }
+    
+    .navbar a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 5px 10px;
+    transition: background 0.3s;
+    }
+    
+    .navbar .donate {
+    background: #ff7f50;
+    border-radius: 5px;
+    color: white;
+    }
+    
+    .navbar a:hover {
+    background: rgba(0, 0, 0, 0.1);
+    }
+    
+    .hero {
+    margin-top: 100px;
+    }
+    
+    .hero h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+    }
+    
+    .hero p {
+    font-size: 1.2rem;
+    margin: 5px 0;
+    }
+    
+    .hero .established {
+    font-style: italic;
+    }
+
+/* Asegurarse de que las imágenes no se desborden */
+img {
+    max-width: 100%;
+    height: 400px;
+  }
+  
+  /* Contenedor para las imágenes */
+  .image-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  /* Alineación de la imagen izquierda */
+  .image-left {
+    width: 45%;
+    text-align: center;
+  }
+  
+  /* Alineación de la imagen derecha */
+  .image-right {
+    width: 45%;
+    text-align: center;
+  }
+  
+  /* Estilo del pie de imagen */
+  figcaption {
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+  }
+/* Asegurarse de que las imágenes no se desborden */
+img {
+    max-width: 100%;
+    height: 400px;
+    border-radius: 5px; /* Opcional, para bordes redondeados */
+  }
+  
+  /* Contenedor principal para las imágenes */
+  .image-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  /* Estilo para las imágenes a la izquierda */
+  .image-left {
+    width: 45%; /* Asigna el 45% del espacio disponible */
+  }
+  
+  /* Estilo para las imágenes a la derecha */
+  .image-right {
+    width: 45%; /* Asigna el 45% del espacio disponible */
+  }
+  
+  /* Asegura que las imágenes estén alineadas en columna */
+  .image-left figure, .image-right figure {
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo del pie de imagen */
+  figcaption {
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+    text-align: center;
+  }
+
+  /* Asegurarse de que las imágenes no se desborden */
+img {
+    max-width: 100%;
+    height: 400px;
+    border-radius: 5px; /* Bordes redondeados, opcional */
+  }
+  
+  /* Contenedor principal para las imágenes */
+  .image-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin-top: 30px;
+  }
+  
+  /* Alineación de la imagen izquierda */
+  .image-left {
+    width: 45%; /* Ajusta el tamaño de la imagen */
+    text-align: center; /* Centra el pie de imagen */
+  }
+  
+  /* Alineación de la imagen derecha */
+  .image-right {
+    width: 45%; /* Ajusta el tamaño de la imagen */
+    text-align: center; /* Centra el pie de imagen */
+  }
+  
+  /* Estilo del pie de imagen */
+  figcaption {
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+  }
+
+  /* Asegúrate de que las imágenes no se desborden */
+img {
+    max-width: 100%;
+    height: 400px;
+    border-radius: 5px; /* Bordes redondeados, opcional */
+  }
+  
+  /* Estilo específico para la imagen dentro de la sección .hero */
+  .hero-image {
+    display: block; /* Esto asegura que la imagen se comporta como un bloque */
+    margin: 30px auto; /* Centra la imagen y le da espacio alrededor */
+    max-width: 80%; /* Ajusta el tamaño de la imagen */
+    border: 2px solid #ccc; /* Bordes opcionales */
+    border-radius: 10px; /* Bordes redondeados, opcional */
+  }
+  

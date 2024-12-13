@@ -5,18 +5,74 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Documento sin título</title>
 <style>
-  /* Estilos para centrar la imagen */
+  /* Estilos para el fondo y centrado */
   body, html {
     height: 100%;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url("Pages/IMGS/BA_MAPA-transformed.jpeg");
+    background-size: cover; /* Ajusta la imagen para cubrir todo el fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center; /* Centra la imagen */
+    background-attachment: fixed; /* Fija el fondo al scroll */
   }
 </style>
 </head>
 
 <body>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+<style>
+  /* Contenedor del título */
+  .contenedor-titulo-xtr123 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Título en la parte superior */
+    padding-top: 30px;
+  }
+
+  /* Estilo del título */
+  .titulo-xtr123 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3.5rem; /* Tamaño más grande para destacar */
+    font-weight: 700; /* Grosor para mayor visibilidad */
+    letter-spacing: 1px;
+    color: white;
+    text-align: center;
+    text-transform: none; /* Mantiene el texto en formato normal */
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  /* Efecto hover del título */
+  .titulo-xtr123:hover {
+    color: #999999; /* Cambia a rojo al pasar el mouse */
+    transform: scale(1.1); /* Agranda ligeramente el texto */
+  }
+
+  /* Línea decorativa con hover */
+  .titulo-xtr123::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #999999;
+    bottom: -5px;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+
+  .titulo-xtr123:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+</style>
+
+
     <%
     response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
     
@@ -34,8 +90,11 @@
         return; 
     }
 %>
-    <img src="file.png" width="609" height="750" usemap="#Map" border="0" />
+<div class="CDMX"><div class="contenedor-titulo-xtr123">
+  <h1 class="titulo-xtr123">Problemáticas en la CDMX</h1>
+</div><img src="file.png" width="609" height="750" usemap="#Map" border="0" />
 <map name="Map" id="Map">
+    
   <area shape="poly" coords="283,98,297,99,292,94,304,85,303,74,291,74,297,67,298,59,302,54,310,55,310,46,320,37,321,29,326,29,328,22,342,14,352,16,352,27,358,40,360,56,354,62,354,68,349,69,350,72,345,78,337,88,339,107,353,121,370,122,376,119,420,139,416,154,437,206,420,214,396,208,389,212,380,205,370,207,349,195,319,187,293,118,276,108" href="ProblematicaServlet?nombre=Gustavo A Madero" alt="GustavoAMadero" />
   <area shape="poly" coords="291,199,296,190,318,188,297,133,278,127,274,130,238,116,229,124,217,172,229,180,243,176,257,178,261,191" href="ProblematicaServlet?nombre=Azcapotzalco" alt="Azcapotzalco" />
   <area shape="poly" coords="343,195,340,212,343,218,338,246,337,257,338,268,300,269,283,274,284,270,267,264,273,250,274,242,291,212,292,200,296,192,319,189" href="ProblematicaServlet?nombre=Cuauhtemoc" alt="Cuauhtemoc" />
@@ -52,6 +111,6 @@
   <area shape="poly" coords="87,499,92,500,91,489,95,484,99,465,113,464,123,456,127,449,134,447,139,436,152,429,149,423,155,408,146,397,152,384,162,379,170,368,179,372,189,368,197,373,232,357,236,361,233,370,222,381,221,390,224,395,239,400,244,391,251,380,250,366,246,363,247,360,253,359,279,331,273,324,264,327,256,323,253,317,254,294,259,281,255,274,219,281,204,283,192,291,184,292,170,303,158,310,162,312,162,321,169,325,169,332,174,341,160,351,148,363,138,375,94,451" href="ProblematicaServlet?nombre=Alvaro Obregon" alt="AlvaroObregon" />
   <area shape="poly" coords="281,332,315,335,324,335,331,334,344,333,346,341,352,350,354,361,373,380,368,408,355,408,329,398,317,408,312,407,301,411,290,406,272,404,251,403,241,401,253,382,253,367,249,363" href="ProblematicaServlet?nombre=Coyoacan" alt="Coyoacan" />
   <area shape="poly" coords="168,274,124,310,117,300,106,309,108,317,96,310,80,311,81,325,76,331,76,345,71,357,74,367,46,394,49,402,51,409,42,409,29,427,34,445,41,441,57,444,69,466,64,489,78,491,85,498,90,452,138,370,170,342,165,334,166,327,160,323,159,314,155,311,181,292,183,283,175,283,170,285" href="ProblematicaServlet?nombre=Cuajimalpa" alt="Cuajimalpa" />
-</map>
+</map></div>
 </body>
 </html>
